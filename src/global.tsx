@@ -51,7 +51,9 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    line-height: 1.1;
+    line-height: 1.5;
+    //background-color: #d1f7e4; // 민트
+    background-color: #f5eed3; // 베이지
   }
 
   ol, ul {
