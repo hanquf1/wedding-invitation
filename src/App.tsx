@@ -1,19 +1,13 @@
-import { useState } from 'react';
-
-import reactLogo from './assets/react.svg';
-
 import './App.css';
 
-import viteLogo from '../public/vite.svg';
-
 // import mainPhoto from './assets/main-photo.jpeg';
-import mainPhoto from './assets/img-test.jpg';
-
 import { Flex } from '@mint-ui/core';
+
+import mainPhoto from './assets/img-test.jpg';
 
 function App() {
   return (
-    <Flex flex>
+    <Flex>
 
       <Flex flexSize='500px' flexAlign='center'>
         <img src={mainPhoto} alt='결혼메인사진' height={500} />
