@@ -165,7 +165,7 @@ function App() {
         </Flex>
       </Flex>
 
-      <Flex flexGap='20px' flexSize='100vh' flexAlingn='center' style={{ width: `${widthSize}px` }}>
+      <Flex flexGap='20px' flexSize='100vh' flexAlign='center' style={{ width: `${widthSize}px` }}>
         <Flex flexSize='60px' flexAlign='left-center' flexGap='6px' rowDirection style={{ fontSize: '18px', color: '#6F5C51' }}>
           <img style={{ width: '20px' }} src={mailIcon} alt='mainicon' />
           위치
