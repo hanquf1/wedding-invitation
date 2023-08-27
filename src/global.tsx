@@ -1,5 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 
+import backgroundImage from './assets/backgroundImage.png';
+
 export const GlobalStyle = createGlobalStyle`
   * {
     box-sizing: border-box;
@@ -53,7 +55,14 @@ export const GlobalStyle = createGlobalStyle`
   body {
     line-height: 1.5;
     //background-color: #d1f7e4; // 민트
-    background-color: #f5eed3; // 베이지
+    //background-color: #f5eed3; // 베이지
+    background-image: url(${backgroundImage});
+    background-repeat: repeat;
+    background-size: 35px;
+    min-width: 375px;
+
+
+
   }
 
   ol, ul {

@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@mint-ui/core": "^0.5.14",
+    "@mint-ui/map": "^0.6.0-beta",
     "eslint-config-rsquare": "^1.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
