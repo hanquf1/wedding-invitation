@@ -1,9 +1,6 @@
 import './App.css';
 
-// import mainPhoto from './assets/main-photo.jpeg';
 import { Flex } from '@mint-ui/core';
-
-// import mainPhoto from './assets/img-test.jpg';
 import styled from 'styled-components';
 
 import mailIcon from './assets/mailIcon.svg';
@@ -59,8 +56,8 @@ const ImagePlant2Style = styled.img`
 const ImagePlant3Style = styled.img`
   position: absolute;
   width: 82px;
-  bottom: 0px;
-  right: 0px;
+  bottom: 0;
+  right: 0;
 `;
 
 const SecondMainPhotoStyle = styled(Flex)`
@@ -75,7 +72,7 @@ const WhiteFlowerTopStyle = styled.img`
   position: absolute;
   width: 80px;
   top: 0;
-  left: 0px;
+  left: 0;
 `;
 const WhiteFlowerTopRightStyle = styled.img`
   transform: scaleX(-1);
@@ -136,7 +133,7 @@ function App() {
         </Flex>
       </Flex>
 
-      {/* 초대합니다 & 두번째 메인 사진 */}
+      {/* 초대합니다 & 두번째 메인 사진. */}
       <Flex flexAlign='center' flexSize='100vh'>
 
         <Flex flexSize='200px' flexAlign='center' style={{ width: `${widthSize}px` }}>
