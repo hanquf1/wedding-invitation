@@ -1,16 +1,11 @@
 import './App.css';
 
-import { Button, Carousel, Flex } from '@mint-ui/core';
-import { useState } from 'react';
+import { Flex } from '@mint-ui/core';
 import styled from 'styled-components';
 
 import mailIcon from './assets/mailIcon.svg';
 import mainPhoto from './assets/main.jpeg';
 import map from './assets/map.png';
-import photo1 from './assets/photo1.jpeg';
-import photo2 from './assets/photo2.jpeg';
-import photo3 from './assets/photo3.jpeg';
-import photo4 from './assets/photo4.jpeg';
 import plant1 from './assets/plant1.png';
 import plant2 from './assets/plant2.png';
 import plant3 from './assets/plant3.png';

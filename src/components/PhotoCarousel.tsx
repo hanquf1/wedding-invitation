@@ -1,5 +1,5 @@
 import { Carousel, Flex } from '@mint-ui/core';
-import { useEffect, useRef, useState } from 'react';
+import { useState } from 'react';
 import styled from 'styled-components';
 
 import photo1 from '../assets/photo1.jpeg';
@@ -9,14 +9,11 @@ import photo4 from '../assets/photo4.jpeg';
 
 const imageList = [ photo1, photo2, photo3, photo4 ];
 
-function PhotoItem({ src, ...rest }) {
+function PhotoItem({ src, ...rest }: any) {
   return <img {...rest} src={src} alt={src} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />;
 }
 
 const StyleCarousel = styled(Flex)`
-  .mint-carousel-item {
-      // transform: ${(props) => (`translateX(${props.moveX * -1}px)`)};
-  }
 `;
 let startX = 0;
 let endX = 0;
@@ -28,7 +25,7 @@ const StyleDot = styled.div`
   width: 6px;
   height: 6px;
   border-radius: 6px;
-  background: ${(props) => (props.active ? '#e6a79d' : '#ccc')};
+  background: ${(props: any) => (props.active ? '#e6a79d' : '#ccc')};
 `;
 
 export function PhotoCarousel() {
@@ -41,12 +38,12 @@ export function PhotoCarousel() {
     },
   });
 
-  const handleTouchStart = (e) => {
+  const handleTouchStart = (e: any) => {
     startX = e.touches[0].pageX;
     console.log('start', startX);
   };
 
-  const handleTouchEnd = (e) => {
+  const handleTouchEnd = (e: any) => {
     endX = e.changedTouches[0].pageX;
     if (startX > endX) {
       handleState.move('right');
@@ -55,18 +52,13 @@ export function PhotoCarousel() {
     }
   };
 
-  const [ moveX, setMoveX ] = useState(0);
-  const handleTouchMove = (e) => {
-    setMoveX(startX - e.touches[0].clientX);
-  };
-
   const [ currentIndex, setCurrentIndex ] = useState<number>(0);
 
   return (
     <Flex>
       사진
 
-      <StyleCarousel moveX={moveX} style={{ backgroundColor: 'rgba(255, 255, 255, 0.5)' }}>
+      <StyleCarousel style={{ backgroundColor: 'rgba(255, 255, 255, 0.5)' }}>
 
         <Carousel
           width='100%'
@@ -74,10 +66,9 @@ export function PhotoCarousel() {
           defaultIndex={0}
           total={imageList.length}
           onLoad={setHandleState}
-          render={(index) => (
+          render={(index: number) => (
             <PhotoItem
               onTouchStart={handleTouchStart}
-              onTouchMove={handleTouchMove}
               onTouchEnd={handleTouchEnd}
               src={imageList[index]}
               handlePhotoMove={setHandleState}
@@ -87,8 +78,8 @@ export function PhotoCarousel() {
         />
         <Flex flexAlign='center' flexSize='40px' rowDirection>
           {
-            imageList.map((item, index) => (
-              <StyleDot key={index} active={currentIndex === index} />
+            imageList.map((_, index) => (
+              <StyleDot<any> key={index} active={currentIndex === index} />
             ))
           }
         </Flex>
