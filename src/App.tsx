@@ -1,6 +1,7 @@
 import './App.css';
 
-import { Flex } from '@mint-ui/core';
+import { Button, Carousel, Flex } from '@mint-ui/core';
+import { useState } from 'react';
 import styled from 'styled-components';
 
 import mailIcon from './assets/mailIcon.svg';
@@ -16,6 +17,7 @@ import plant3 from './assets/plant3.png';
 import secondMain from './assets/secondMain.jpeg';
 import whiteFlowBottom from './assets/whiteFlowBottom.png';
 import whiteFlowerTop from './assets/whiteFlowerTop.png';
+import { PhotoCarousel } from './components/PhotoCarousel';
 // import photo5 from './assets/photo5.jpeg';
 // import { CanvasArea } from './game/CanvasArea';
 
@@ -99,7 +101,7 @@ function App() {
   return (
     <AppStyle flexAlign='center' flexGap='55px'>
 
-      <Flex flexSize='100vh'>
+      <Flex>
 
         {/* wedding */}
         <Flex flexSize='160px' style={{ fontSize: '32px', fontWeight: 700 }} flexAlign='center'>
@@ -134,7 +136,7 @@ function App() {
       </Flex>
 
       {/* 초대합니다 & 두번째 메인 사진. */}
-      <Flex flexAlign='center' flexSize='100vh'>
+      <Flex flexAlign='center'>
 
         <Flex flexSize='200px' flexAlign='center' style={{ width: `${widthSize}px` }}>
           <Flex flexSize='30px' flexAlign='left-center' flexGap='6px' rowDirection style={{ fontSize: '18px', color: '#6F5C51' }}>
@@ -151,7 +153,7 @@ function App() {
 
         <Flex flexAlign='center' flexSize='450px'>
           <Flex flexAlign='center' style={{ width: `${minWidthSize}px` }}>
-            <SecondMainPhotoStyle flexSize='400px'>
+            <SecondMainPhotoStyle>
               <img alt='신랑신부가 손을 흔드는 사진' style={{ width: '100%', transform: 'scale(1.1)', transformOrigin: 'top' }} src={secondMain} />
             </SecondMainPhotoStyle>
             <WhiteFlowerTopStyle src={whiteFlowerTop} />
@@ -162,7 +164,8 @@ function App() {
         </Flex>
       </Flex>
 
-      <Flex flexGap='20px' flexSize='100vh' flexAlign='center' style={{ width: `${widthSize}px` }}>
+      {/* 위치 정보, 지도 */}
+      <Flex flexGap='20px' flexAlign='center' style={{ width: `${widthSize}px` }}>
         <Flex flexSize='60px' flexAlign='left-center' flexGap='6px' rowDirection style={{ fontSize: '18px', color: '#6F5C51' }}>
           <img style={{ width: '20px' }} src={mailIcon} alt='mainicon' />
           위치
@@ -210,44 +213,8 @@ function App() {
         </Flex>
       </Flex>
 
-      <Flex flexGap='5px' rowDirection flexAlign='center' style={{ maxWidth: '700px', width: '95%', flexWrap: 'wrap' }}>
-        <Flex>
-          <img
-            style={{ objectFit: 'cover', borderRadius: '30px', border: '3px solid #fff' }}
-            src={photo1}
-            alt='결혼메인사진'
-            width='100%'
-            height='280px'
-          />
-        </Flex>
-        <img
-          style={{ objectFit: 'cover', borderRadius: '30px', border: '3px solid #fff' }}
-          src={photo2}
-          alt='결혼메인사진'
-          width='49%'
-          height='280px'
-        />
-        <img
-          style={{ objectFit: 'cover', borderRadius: '30px', border: '3px solid #fff' }}
-          src={photo3}
-          alt='결혼메인사진'
-          width='49%'
-          height='280px'
-        />
-        <img
-          style={{ objectFit: 'cover', borderRadius: '30px', border: '3px solid #fff' }}
-          src={photo4}
-          alt='결혼메인사진'
-          width='49%'
-          height='280px'
-        />
-        <img
-          style={{ objectFit: 'cover', borderRadius: '30px', border: '3px solid #fff' }}
-          src={photo4}
-          alt='결혼메인사진'
-          width='49%'
-          height='280px'
-        />
+      <Flex flexSize='500px' flexGap='5px' flexAlign='center' style={{ width: `${widthSize}px` }}>
+        <PhotoCarousel />
       </Flex>
 
       <Flex flexAlign='center'>
