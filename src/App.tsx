@@ -4,6 +4,7 @@ import { Flex } from '@mint-ui/core';
 import styled from 'styled-components';
 
 import copyIcon from './assets/icons/copyIcon.png';
+import heartIcon from './assets/icons/heartIcon.svg';
 import mailIcon from './assets/icons/mailIcon.svg';
 import mapFIndIcon from './assets/icons/mapFIndIcon.svg';
 import mapIcon from './assets/icons/mapIcon.svg';
@@ -91,7 +92,7 @@ const SecondMainPhotoStyle = styled(Flex)`
 //   bottom: 0;
 //   left: 3px;
 // `;
-// const WhiteFlowerBottomRightStyle = styled.img`
+// const WhiteFlowerBottomRightSt≈yle = styled.img`
 //   transform: scaleX(-1);
 //   position: absolute;
 //   width: 80px;
@@ -223,6 +224,19 @@ function App() {
           사진
         </Flex>
         <PhotoSlick />
+      </Flex>
+
+      {/* 마음 보내기 */}
+      <Flex flexGap='5px' flexAlign='center' style={{ width: `${widthSize}px` }}>
+        {/* <PhotoCarousel /> */}
+        <Flex flexSize='60px' flexAlign='left-center' flexGap='6px' rowDirection style={{ fontFamily: 'Se-hwa', fontSize: '22px', color: '#6F5C51' }}>
+          <img style={{ width: '20px' }} src={heartIcon} alt='heartIcon' />
+          마음 보내기
+        </Flex>
+        <Flex flexAlign='center' style={{ fontFamily: 'Se-hwa', fontSize: '23px', backgroundColor: 'rgba(255, 255, 255, 0.5)', color: '#6F5C51', padding: '10px 0' }}>
+          신랑 계좌: 96270101-269051 국민은행 (장한별) <br />
+          신부 계좌: 1000-1592-7253 토스뱅크 (류한나)
+        </Flex>
       </Flex>
 
       {/* 방명록 */}
