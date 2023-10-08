@@ -3,16 +3,22 @@ import './App.css';
 import { Flex } from '@mint-ui/core';
 import styled from 'styled-components';
 
-import mailIcon from './assets/mailIcon.svg';
+import copyIcon from './assets/icons/copyIcon.png';
+import mailIcon from './assets/icons/mailIcon.svg';
+import mapFIndIcon from './assets/icons/mapFIndIcon.svg';
+import mapIcon from './assets/icons/mapIcon.svg';
+import photoIcon from './assets/icons/photoIcon.svg';
 import mainPhoto from './assets/main.jpeg';
 import map from './assets/map.png';
 import plant1 from './assets/plant1.png';
 import plant2 from './assets/plant2.png';
 import plant3 from './assets/plant3.png';
 import secondMain from './assets/secondMain.jpeg';
-import whiteFlowBottom from './assets/whiteFlowBottom.png';
-import whiteFlowerTop from './assets/whiteFlowerTop.png';
-import { PhotoCarousel } from './components/PhotoCarousel';
+// import whiteFlowBottom from './assets/whiteFlowBottom.png';
+// import whiteFlowerTop from './assets/whiteFlowerTop.png';
+// import { Board } from './components/Board';
+// import { PhotoCarousel } from './components/PhotoCarousel';
+import { PhotoSlick } from './components/PhotoSlick';
 // import photo5 from './assets/photo5.jpeg';
 // import { CanvasArea } from './game/CanvasArea';
 
@@ -20,7 +26,7 @@ const AppStyle = styled(Flex)`
 `;
 
 const widthSize = 300;
-const minWidthSize = 375;
+const minWidthSize = 350;
 
 const ImageContainerStyle = styled(Flex)`
   border-top-left-radius: 200px;
@@ -38,19 +44,20 @@ const ImageStyle = styled.img`
   //maxWidth: '700px', minWidth: '300px', maxHeight: '1000px'
 `;
 
-const ImagePlant1Style = styled.img`
+const ImagePlantLeftBottomStyle = styled.img`
   position: absolute;
   width: 54px;
   bottom: 0;
-  left: 31px;
+  left: -1px;
 `;
-const ImagePlant2Style = styled.img`
+const ImagePlantRightTopStyle = styled.img`
   position: absolute;
   width: 47px;
   top: 1px;
-  right: 50px;
+  right: 31px;
+  z-index: -1;
 `;
-const ImagePlant3Style = styled.img`
+const ImagePlantRightBottomStyle = styled.img`
   position: absolute;
   width: 82px;
   bottom: 0;
@@ -65,57 +72,57 @@ const SecondMainPhotoStyle = styled(Flex)`
   overflow: hidden;
 `;
 
-const WhiteFlowerTopStyle = styled.img`
-  position: absolute;
-  width: 80px;
-  top: 0;
-  left: 0;
-`;
-const WhiteFlowerTopRightStyle = styled.img`
-  transform: scaleX(-1);
-  position: absolute;
-  width: 80px;
-  top: 0;
-  right: 0;
-`;
-const WhiteFlowerBottomLeftStyle = styled.img`
-  position: absolute;
-  width: 80px;
-  bottom: 0;
-  left: 3px;
-`;
-const WhiteFlowerBottomRightStyle = styled.img`
-  transform: scaleX(-1);
-  position: absolute;
-  width: 80px;
-  bottom: 0;
-  right: 3px;
-`;
+// const WhiteFlowerTopStyle = styled.img`
+//   position: absolute;
+//   width: 80px;
+//   top: 0;
+//   left: 0;
+// `;
+// const WhiteFlowerTopRightStyle = styled.img`
+//   transform: scaleX(-1);
+//   position: absolute;
+//   width: 80px;
+//   top: 0;
+//   right: 0;
+// `;
+// const WhiteFlowerBottomLeftStyle = styled.img`
+//   position: absolute;
+//   width: 80px;
+//   bottom: 0;
+//   left: 3px;
+// `;
+// const WhiteFlowerBottomRightStyle = styled.img`
+//   transform: scaleX(-1);
+//   position: absolute;
+//   width: 80px;
+//   bottom: 0;
+//   right: 3px;
+// `;
 
 function App() {
   return (
     <AppStyle flexAlign='center' flexGap='55px'>
 
+      {/* 메인 사진, 인사 */}
       <Flex>
-
         {/* wedding */}
         <Flex flexSize='160px' style={{ fontSize: '32px', fontWeight: 700 }} flexAlign='center'>
-          <span style={{ color: '#792e13' }}>WEDDING DAY</span>
+          <span style={{ color: '#792e13' }}>Wedding Day</span>
         </Flex>
         {/* <Flex> */}
         {/* <CanvasArea /> */}
         {/* </Flex> */}
 
         {/* main 사진 */}
-        <Flex flexSize='373px' style={{ maxHeight: '1000px' }} flexAlign='center'>
+        <Flex flexSize={`${minWidthSize}px`} style={{ maxHeight: '1000px' }} flexAlign='center'>
           <Flex flexAlign='center' style={{ width: `${minWidthSize}px` }}>
 
             <ImageContainerStyle flexAlign='center'>
               <ImageStyle src={mainPhoto} alt='결혼메인사진' />
             </ImageContainerStyle>
-            <ImagePlant1Style src={plant1} alt='plant1' />
-            <ImagePlant2Style src={plant2} alt='plant2' />
-            <ImagePlant3Style src={plant3} alt='plant3' />
+            <ImagePlantRightTopStyle src={plant2} alt='plant2' />
+            <ImagePlantLeftBottomStyle src={plant1} alt='plant1' />
+            <ImagePlantRightBottomStyle src={plant3} alt='plant3' />
           </Flex>
         </Flex>
 
@@ -131,39 +138,39 @@ function App() {
       </Flex>
 
       {/* 초대합니다 & 두번째 메인 사진. */}
-      <Flex flexAlign='center'>
+      <Flex flexAlign='center' flexGap='20px'>
 
         <Flex flexSize='200px' flexAlign='center' style={{ width: `${widthSize}px` }}>
-          <Flex flexSize='30px' flexAlign='left-center' flexGap='6px' rowDirection style={{ fontSize: '18px', color: '#6F5C51' }}>
+          <Flex flexSize='30px' flexAlign='left-center' flexGap='6px' rowDirection style={{ fontFamily: 'Se-hwa', fontSize: '22px', lineHeight: '22px', color: '#6F5C51' }}>
             <img style={{ width: '20px' }} src={mailIcon} alt='mainicon' />
             초대 합니다
           </Flex>
-          <Flex flexAlign='center' style={{ fontSize: '18px', backgroundColor: 'rgba(255, 255, 255, 0.5)', color: '#6F5C51', padding: '20px 0' }}>
-            앞으로 함께 걸어갈 ‘한별&한나’의 여정,
+          <Flex flexAlign='center' style={{ fontFamily: 'Se-hwa', fontSize: '23px', backgroundColor: 'rgba(255, 255, 255, 0.5)', color: '#6F5C51', padding: '10px 0' }}>
+            앞으로 함께 걸어갈 ‘한별&한나’의 여정, <br />
             그 출발에 당신을 초대합니다.
             <br />
             따뜻한 축복과 함께해 주시면 감사하겠습니다.
           </Flex>
         </Flex>
 
-        <Flex flexAlign='center' flexSize='450px'>
+        <Flex flexAlign='center' flexSize='420px'>
           <Flex flexAlign='center' style={{ width: `${minWidthSize}px` }}>
             <SecondMainPhotoStyle>
               <img alt='신랑신부가 손을 흔드는 사진' style={{ width: '100%', transform: 'scale(1.1)', transformOrigin: 'top' }} src={secondMain} />
             </SecondMainPhotoStyle>
-            <WhiteFlowerTopStyle src={whiteFlowerTop} />
-            <WhiteFlowerTopRightStyle src={whiteFlowerTop} />
-            <WhiteFlowerBottomLeftStyle src={whiteFlowBottom} />
-            <WhiteFlowerBottomRightStyle src={whiteFlowBottom} />
+            {/* <WhiteFlowerTopStyle src={whiteFlowerTop} /> */}
+            {/* <WhiteFlowerTopRightStyle src={whiteFlowerTop} /> */}
+            {/* <WhiteFlowerBottomLeftStyle src={whiteFlowBottom} /> */}
+            {/* <WhiteFlowerBottomRightStyle src={whiteFlowBottom} /> */}
           </Flex>
         </Flex>
       </Flex>
 
       {/* 위치 정보, 지도 */}
       <Flex flexGap='20px' flexAlign='center' style={{ width: `${widthSize}px` }}>
-        <Flex flexSize='60px' flexAlign='left-center' flexGap='6px' rowDirection style={{ fontSize: '18px', color: '#6F5C51' }}>
-          <img style={{ width: '20px' }} src={mailIcon} alt='mainicon' />
-          위치
+        <Flex flexSize='60px' flexAlign='left-center' flexGap='6px' rowDirection style={{ fontFamily: 'Se-hwa', fontSize: '22px', color: '#6F5C51' }}>
+          <img style={{ width: '20px' }} src={mapIcon} alt='mainicon' />
+          지도
         </Flex>
 
         <Flex flexSize='350px' style={{ backgroundColor: '#fff' }} flexAlign='center'>
@@ -182,20 +189,20 @@ function App() {
         </Flex>
 
         <Flex flexSize='28px' rowDirection flexAlign='center' flexGap='10px'>
-          <Flex flexAlign='left-center' flexGap='6px' rowDirection style={{ fontSize: '11px', color: 'black', backgroundColor: 'rgba(255, 255, 255, 0.5)' }}>
-            <img style={{ width: '20px' }} src={mailIcon} alt='mainicon' />
+          <Flex flexAlign='left-center' flexGap='6px' rowDirection style={{ fontFamily: 'Se-hwa', fontSize: '17px', color: 'black', backgroundColor: 'rgba(255, 255, 255, 0.5)' }}>
+            <img style={{ width: '20px' }} src={copyIcon} alt='mainicon' />
             주소 복사하기
           </Flex>
           <Flex flexAlign='left-center' flexGap='6px' rowDirection style={{ fontSize: '11px', color: 'black', backgroundColor: 'rgba(255, 255, 255, 0.5)' }} onClick={() => (window.open('https://naver.me/5girhnXo'))}>
-            <img style={{ width: '20px' }} src={mailIcon} alt='mainicon' />
-            <span>
-              <span style={{ textShadow: ' 0px 1px 5px rgba(166, 194, 133, 1)' }}>네이버</span> 길찾기
+            <img style={{ width: '20px' }} src={mapFIndIcon} alt='mainicon' />
+            <span style={{ fontFamily: 'Se-hwa', fontSize: '17px' }}>
+              <span style={{ fontFamily: 'Se-hwa', fontSize: '17px', textShadow: ' 0px 1px 5px rgba(166, 194, 133, 1)' }}>네이버</span> 길찾기
             </span>
           </Flex>
           <Flex flexAlign='left-center' flexGap='6px' rowDirection style={{ fontSize: '11px', color: 'black', backgroundColor: 'rgba(255, 255, 255, 0.5)' }} onClick={() => (window.open('http://kko.to/IBa3lj4oz7'))}>
-            <img style={{ width: '20px' }} src={mailIcon} alt='mainicon' />
-            <span>
-              <span style={{ textShadow: ' 0px 1px 5px rgba(255, 227, 0, 1)' }}>카카오</span> 길찾기
+            <img style={{ width: '20px' }} src={mapFIndIcon} alt='mainicon' />
+            <span style={{ fontFamily: 'Se-hwa', fontSize: '17px' }}>
+              <span style={{ fontFamily: 'Se-hwa', fontSize: '17px', textShadow: ' 0px 1px 5px rgba(255, 227, 0, 1)' }}>카카오</span> 길찾기
             </span>
 
           </Flex>
@@ -208,13 +215,24 @@ function App() {
         </Flex>
       </Flex>
 
-      <Flex flexSize='500px' flexGap='5px' flexAlign='center' style={{ width: `${widthSize}px` }}>
-        <PhotoCarousel />
+      {/* 사진 캐러셀 */}
+      <Flex flexGap='5px' flexAlign='center' style={{ width: `${widthSize}px` }}>
+        {/* <PhotoCarousel /> */}
+        <Flex flexSize='60px' flexAlign='left-center' flexGap='6px' rowDirection style={{ fontFamily: 'Se-hwa', fontSize: '22px', color: '#6F5C51' }}>
+          <img style={{ width: '20px' }} src={photoIcon} alt='photoIcon' />
+          사진
+        </Flex>
+        <PhotoSlick />
       </Flex>
 
-      <Flex flexAlign='center'>
-        --------------
-      </Flex>
+      {/* 방명록 */}
+      {/* <Flex> */}
+      {/*  <Board /> */}
+      {/* </Flex> */}
+
+      {/* <Flex flexAlign='center'> */}
+      {/*  --------------*/}
+      {/* </Flex> */}
     </AppStyle>
     // <>
     //   축 결혼
