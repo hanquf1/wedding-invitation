@@ -1,6 +1,7 @@
 import './App.css';
 
 import { Flex } from '@mint-ui/core';
+import copy from 'copy-to-clipboard';
 import styled from 'styled-components';
 
 import copyIcon from './assets/icons/copyIcon.png';
@@ -22,7 +23,6 @@ import secondMain from './assets/secondMain.jpeg';
 import { PhotoSlick } from './components/PhotoSlick';
 // import photo5 from './assets/photo5.jpeg';
 // import { CanvasArea } from './game/CanvasArea';
-
 const AppStyle = styled(Flex)`
 `;
 
@@ -99,6 +99,11 @@ const SecondMainPhotoStyle = styled(Flex)`
 //   bottom: 0;
 //   right: 3px;
 // `;
+
+const handleCopy = (value: string) => {
+  console.log('string', value);
+  copy(value);
+};
 
 function App() {
   return (
@@ -190,7 +195,7 @@ function App() {
         </Flex>
 
         <Flex flexSize='28px' rowDirection flexAlign='center' flexGap='10px'>
-          <Flex flexAlign='left-center' flexGap='6px' rowDirection style={{ fontFamily: 'Se-hwa', fontSize: '17px', color: 'black', backgroundColor: 'rgba(255, 255, 255, 0.5)' }}>
+          <Flex onClick={() => handleCopy('서울 광진구 능동로 110')} flexAlign='left-center' flexGap='6px' rowDirection style={{ fontFamily: 'Se-hwa', fontSize: '17px', color: 'black', backgroundColor: 'rgba(255, 255, 255, 0.5)' }}>
             <img style={{ width: '20px' }} src={copyIcon} alt='mainicon' />
             주소 복사하기
           </Flex>
@@ -233,9 +238,9 @@ function App() {
           <img style={{ width: '20px' }} src={heartIcon} alt='heartIcon' />
           마음 보내기
         </Flex>
-        <Flex flexAlign='center' style={{ fontFamily: 'Se-hwa', fontSize: '23px', backgroundColor: 'rgba(255, 255, 255, 0.5)', color: '#6F5C51', padding: '10px 0' }}>
-          신랑 계좌: 96270101-269051 국민은행 (장한별) <br />
-          신부 계좌: 1000-1592-7253 토스뱅크 (류한나)
+        <Flex flexAlign='center' style={{ backgroundColor: 'rgba(255, 255, 255, 0.5)', color: '#6F5C51', padding: '10px 0' }}>
+          <span onClick={() => handleCopy('96270101269051 국민은행')} style={{ fontFamily: 'Se-hwa', fontSize: '23px' }}>신랑 계좌: 96270101-269051 국민은행 (장한별)</span> <br />
+          <span onClick={() => handleCopy('100015927253 토스뱅크')} style={{ fontFamily: 'Se-hwa', fontSize: '23px' }}>신부 계좌: 1000-1592-7253 토스뱅크 (류한나)</span>
         </Flex>
       </Flex>
       <Flex />
