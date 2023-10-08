@@ -243,7 +243,9 @@ function App() {
           <span onClick={() => handleCopy('100015927253 토스뱅크')} style={{ fontFamily: 'Se-hwa', fontSize: '23px' }}>신부 계좌: 1000-1592-7253 토스뱅크 (류한나)</span>
         </Flex>
       </Flex>
-      <Flex />
+      <Flex flexGap='5px' flexAlign='center' style={{ width: `${widthSize}px`, marginBottom: '10px' }}>
+        <span style={{ fontSize: '10px' }}> designed by hanna & created by hanbyul </span>
+      </Flex>
 
       {/* 방명록 */}
       {/* <Flex> */}
