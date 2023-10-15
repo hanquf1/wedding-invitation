@@ -20,7 +20,9 @@ import secondMain from './assets/secondMain.jpeg';
 // import whiteFlowerTop from './assets/whiteFlowerTop.png';
 // import { Board } from './components/Board';
 // import { PhotoCarousel } from './components/PhotoCarousel';
+import { Account } from './components/Account';
 import { PhotoSlick } from './components/PhotoSlick';
+import { Title } from './components/Title';
 // import photo5 from './assets/photo5.jpeg';
 // import { CanvasArea } from './game/CanvasArea';
 const AppStyle = styled(Flex)`
@@ -32,7 +34,7 @@ const minWidthSize = 350;
 const ImageContainerStyle = styled(Flex)`
   border-top-left-radius: 200px;
   border-top-right-radius: 200px;
-  border: 4px solid #cc6666; 
+  border: 4px solid #cc6666;
   width: ${widthSize}px;
   height: 390px;
   overflow: hidden;
@@ -67,7 +69,7 @@ const ImagePlantRightBottomStyle = styled.img`
 
 const SecondMainPhotoStyle = styled(Flex)`
   border-radius: 50px;
-  border: 4px solid #cc6666; 
+  border: 4px solid #cc6666;
   width: ${widthSize}px;
   //height: 400px;
   overflow: hidden;
@@ -134,7 +136,16 @@ function App() {
 
         {/* 장소 시간 */}
         <Flex flexAlign='center'>
-          <Flex flexAlign='center' flexSize='150px' style={{ fontSize: '18px', backgroundColor: 'rgba(255, 255, 255, 0.5)', color: '#6F5C51', width: `${widthSize}px` }}>
+          <Flex
+            flexAlign='center'
+            flexSize='150px'
+            style={{
+              fontSize: '18px',
+              backgroundColor: 'rgba(255, 255, 255, 0.5)',
+              color: '#6F5C51',
+              width: `${widthSize}px`,
+            }}
+          >
             <span>2023년 12월 16일 토요일 PM 3:50</span>
             <span>건대 스타시티아트홀</span>
             <br />
@@ -147,11 +158,28 @@ function App() {
       <Flex flexAlign='center' flexGap='20px'>
 
         <Flex flexSize='200px' flexAlign='center' style={{ width: `${widthSize}px` }}>
-          <Flex flexSize='30px' flexAlign='left-center' flexGap='6px' rowDirection style={{ fontFamily: 'Se-hwa', fontSize: '22px', lineHeight: '22px', color: '#6F5C51' }}>
-            <img style={{ width: '20px' }} src={mailIcon} alt='mainicon' />
-            초대 합니다
-          </Flex>
-          <Flex flexAlign='center' style={{ fontFamily: 'Se-hwa', fontSize: '23px', backgroundColor: 'rgba(255, 255, 255, 0.5)', color: '#6F5C51', padding: '10px 0' }}>
+          <Title title='초대 합니다' imageUrl={mailIcon} alt='mailIcon' />
+
+          {/* <Flex */}
+          {/*  flexSize='30px' */}
+          {/*  flexAlign='left-center' */}
+          {/*  flexGap='6px' */}
+          {/*  rowDirection */}
+          {/*  style={{ fontFamily: 'Se-hwa', fontSize: '22px', lineHeight: '22px', color: '#6F5C51' }} */}
+          {/* > */}
+          {/*  <img style={{ width: '20px' }} src={mailIcon} alt='mainicon' /> */}
+          {/*  초대 합니다 */}
+          {/* </Flex> */}
+          <Flex
+            flexAlign='center'
+            style={{
+              fontFamily: 'Se-hwa',
+              fontSize: '23px',
+              backgroundColor: 'rgba(255, 255, 255, 0.5)',
+              color: '#6F5C51',
+              padding: '10px 0',
+            }}
+          >
             앞으로 함께 걸어갈 ‘한별&한나’의 여정, <br />
             그 출발에 당신을 초대합니다.
             <br />
@@ -162,7 +190,11 @@ function App() {
         <Flex flexAlign='center' flexSize='420px'>
           <Flex flexAlign='center' style={{ width: `${minWidthSize}px` }}>
             <SecondMainPhotoStyle>
-              <img alt='신랑신부가 손을 흔드는 사진' style={{ width: '100%', transform: 'scale(1.1)', transformOrigin: 'top' }} src={secondMain} />
+              <img
+                alt='신랑신부가 손을 흔드는 사진'
+                style={{ width: '100%', transform: 'scale(1.1)', transformOrigin: 'top' }}
+                src={secondMain}
+              />
             </SecondMainPhotoStyle>
             {/* <WhiteFlowerTopStyle src={whiteFlowerTop} /> */}
             {/* <WhiteFlowerTopRightStyle src={whiteFlowerTop} /> */}
@@ -174,41 +206,73 @@ function App() {
 
       {/* 위치 정보, 지도 */}
       <Flex flexGap='20px' flexAlign='center' style={{ width: `${widthSize}px` }}>
-        <Flex flexSize='60px' flexAlign='left-center' flexGap='6px' rowDirection style={{ fontFamily: 'Se-hwa', fontSize: '22px', color: '#6F5C51' }}>
-          <img style={{ width: '20px' }} src={mapIcon} alt='mainicon' />
-          지도
-        </Flex>
+        <Title title='지도' imageUrl={mapIcon} alt='mapIcon' />
 
         <Flex flexSize='350px' style={{ backgroundColor: '#fff' }} flexAlign='center'>
           <img style={{ width: '100%' }} src={map} alt='지도' />
 
           <Flex flexSize='150px' flexAlign='left-center' style={{ paddingLeft: '5px', fontSize: '10px' }}>
-            <p>주   소 |  서울 광진구 능동로 110, 스타시티영존 5층 (화양동 4-20)</p>
+            <p>주 소 | 서울 광진구 능동로 110, 스타시티영존 5층 (화양동 4-20)</p>
             <br />
-            <p>주   차 |  건물 내 B1~B5 2시간 무료, 건대병원 주차장 1시간 30분 무료</p>
+            <p>주 차 | 건물 내 B1~B5 2시간 무료, 건대병원 주차장 1시간 30분 무료</p>
             <br />
-            <p>지하철 |  건대입구역 2호선 2번출구  7호선  3번출구</p>
+            <p>지하철 | 건대입구역 2호선 2번출구 7호선 3번출구</p>
             <br />
-            <p>버   스 |  240  721  2016  2222  3217  3220  4212  102  3500</p>
+            <p>버 스 | 240 721 2016 2222 3217 3220 4212 102 3500</p>
           </Flex>
 
         </Flex>
 
         <Flex flexSize='28px' rowDirection flexAlign='center' flexGap='10px'>
-          <Flex onClick={() => handleCopy('서울 광진구 능동로 110')} flexAlign='left-center' flexGap='6px' rowDirection style={{ fontFamily: 'Se-hwa', fontSize: '17px', color: 'black', backgroundColor: 'rgba(255, 255, 255, 0.5)' }}>
+          <Flex
+            onClick={() => handleCopy('서울 광진구 능동로 110')}
+            flexAlign='left-center'
+            flexGap='6px'
+            rowDirection
+            style={{
+              fontFamily: 'Se-hwa',
+              fontSize: '17px',
+              color: 'black',
+              backgroundColor: 'rgba(255, 255, 255, 0.5)',
+            }}
+          >
             <img style={{ width: '20px' }} src={copyIcon} alt='mainicon' />
             주소 복사하기
           </Flex>
-          <Flex flexAlign='left-center' flexGap='6px' rowDirection style={{ fontSize: '11px', color: 'black', backgroundColor: 'rgba(255, 255, 255, 0.5)' }} onClick={() => (window.open('https://naver.me/5girhnXo'))}>
+          <Flex
+            flexAlign='left-center'
+            flexGap='6px'
+            rowDirection
+            style={{ fontSize: '11px', color: 'black', backgroundColor: 'rgba(255, 255, 255, 0.5)' }}
+            onClick={() => (window.open('https://naver.me/5girhnXo'))}
+          >
             <img style={{ width: '20px' }} src={mapFIndIcon} alt='mainicon' />
             <span style={{ fontFamily: 'Se-hwa', fontSize: '17px' }}>
-              <span style={{ fontFamily: 'Se-hwa', fontSize: '17px', textShadow: ' 0px 1px 5px rgba(166, 194, 133, 1)' }}>네이버</span> 길찾기
+              <span style={{
+                fontFamily: 'Se-hwa',
+                fontSize: '17px',
+                textShadow: ' 0px 1px 5px rgba(166, 194, 133, 1)',
+              }}
+              >네이버
+              </span> 길찾기
             </span>
           </Flex>
-          <Flex flexAlign='left-center' flexGap='6px' rowDirection style={{ fontSize: '11px', color: 'black', backgroundColor: 'rgba(255, 255, 255, 0.5)' }} onClick={() => (window.open('http://kko.to/IBa3lj4oz7'))}>
+          <Flex
+            flexAlign='left-center'
+            flexGap='6px'
+            rowDirection
+            style={{ fontSize: '11px', color: 'black', backgroundColor: 'rgba(255, 255, 255, 0.5)' }}
+            onClick={() => (window.open('http://kko.to/IBa3lj4oz7'))}
+          >
             <img style={{ width: '20px' }} src={mapFIndIcon} alt='mainicon' />
             <span style={{ fontFamily: 'Se-hwa', fontSize: '17px' }}>
-              <span style={{ fontFamily: 'Se-hwa', fontSize: '17px', textShadow: ' 0px 1px 5px rgba(255, 227, 0, 1)' }}>카카오</span> 길찾기
+              <span style={{
+                fontFamily: 'Se-hwa',
+                fontSize: '17px',
+                textShadow: ' 0px 1px 5px rgba(255, 227, 0, 1)',
+              }}
+              >카카오
+              </span> 길찾기
             </span>
 
           </Flex>
@@ -224,24 +288,14 @@ function App() {
       {/* 사진 캐러셀 */}
       <Flex flexGap='5px' flexAlign='center' style={{ width: `${widthSize}px` }}>
         {/* <PhotoCarousel /> */}
-        <Flex flexSize='60px' flexAlign='left-center' flexGap='6px' rowDirection style={{ fontFamily: 'Se-hwa', fontSize: '22px', color: '#6F5C51' }}>
-          <img style={{ width: '20px' }} src={photoIcon} alt='photoIcon' />
-          사진
-        </Flex>
+        <Title title='사진' imageUrl={photoIcon} alt='photoIcon' />
         <PhotoSlick />
       </Flex>
 
       {/* 마음 보내기 */}
       <Flex flexGap='5px' flexAlign='center' style={{ width: `${widthSize}px` }}>
-        {/* <PhotoCarousel /> */}
-        <Flex flexSize='60px' flexAlign='left-center' flexGap='6px' rowDirection style={{ fontFamily: 'Se-hwa', fontSize: '22px', color: '#6F5C51' }}>
-          <img style={{ width: '20px' }} src={heartIcon} alt='heartIcon' />
-          마음 보내기
-        </Flex>
-        <Flex flexAlign='center' style={{ backgroundColor: 'rgba(255, 255, 255, 0.5)', color: '#6F5C51', padding: '10px 0' }}>
-          <span onClick={() => handleCopy('96270101269051 국민은행')} style={{ fontFamily: 'Se-hwa', fontSize: '23px' }}>신랑 계좌: 96270101-269051 국민은행 (장한별)</span> <br />
-          <span onClick={() => handleCopy('100015927253 토스뱅크')} style={{ fontFamily: 'Se-hwa', fontSize: '23px' }}>신부 계좌: 1000-1592-7253 토스뱅크 (류한나)</span>
-        </Flex>
+        <Title title='마음 보내기' imageUrl={heartIcon} alt='heartIcon' />
+        <Account />
       </Flex>
       <Flex flexGap='5px' flexAlign='center' style={{ width: `${widthSize}px`, marginBottom: '10px' }}>
         <span style={{ fontSize: '10px' }}> designed by hanna & created by hanbyul </span>

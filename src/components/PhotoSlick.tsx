@@ -26,6 +26,7 @@ export function PhotoSlick() {
         infiniteLoop
         PreventMovementUntilSwipeScrollTolerance
         swipeScrollTolerance={50}
+        showStatus
       >
         {
           imageList.map((_, index) => (
