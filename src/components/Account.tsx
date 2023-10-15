@@ -5,11 +5,9 @@ import styled from 'styled-components';
 const CopyStyled = styled.span`
   cursor: pointer;
   color: #6F5C51;
-  //font-family: Se-hwa,serif; 
   padding: 2px 6px;
   border-radius: 1px;
   background-color: #ddd;
-
 `;
 
 export function Account() {
@@ -21,12 +19,12 @@ export function Account() {
   return (
     <Flex
       flexAlign='center'
-      style={{ backgroundColor: 'rgba(255, 255, 255, 0.5)', padding: '10px 0', fontSize: '14px' }}
+      style={{ backgroundColor: 'rgba(255, 255, 255, 0.5)', padding: '10px', fontSize: '14px' }}
     >
       <Flex onClick={() => handleCopy('96270101269051 국민은행')}>
         신랑 계좌
         <Flex rowDirection justifyContent='space-between'>
-          국민은행 96270101-269051 <CopyStyled>복사하기</CopyStyled> <br />
+          국민은행 96270101-269051 <CopyStyled>복사하기</CopyStyled>
         </Flex>
         (장한별)
       </Flex>
@@ -34,7 +32,7 @@ export function Account() {
       <Flex onClick={() => handleCopy('100015927253 토스뱅크')}>
         신부 계좌
         <Flex rowDirection justifyContent='space-between'>
-          토스뱅크 1000-1592-7253 <CopyStyled>복사하기</CopyStyled> <br />
+          토스뱅크 1000-1592-7253 <CopyStyled>복사하기</CopyStyled>
         </Flex>
         (류한나)
       </Flex>

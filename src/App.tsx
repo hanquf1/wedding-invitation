@@ -110,16 +110,16 @@ const handleCopy = (value: string) => {
 function App() {
   return (
     <AppStyle flexAlign='center' flexGap='55px'>
-
       {/* 메인 사진, 인사 */}
       <Flex>
+        {/* <Flex> */}
+        {/* <CanvasArea /> */}
+        {/* </Flex> */}
+
         {/* wedding */}
         <Flex flexSize='160px' style={{ fontSize: '32px', fontWeight: 700 }} flexAlign='center'>
           <span style={{ color: '#792e13' }}>Wedding Day</span>
         </Flex>
-        {/* <Flex> */}
-        {/* <CanvasArea /> */}
-        {/* </Flex> */}
 
         {/* main 사진 */}
         <Flex flexSize={`${minWidthSize}px`} style={{ maxHeight: '1000px' }} flexAlign='center'>
@@ -135,21 +135,30 @@ function App() {
         </Flex>
 
         {/* 장소 시간 */}
-        <Flex flexAlign='center'>
+        <Flex flexAlign='center' style={{ marginTop: '30px' }}>
           <Flex
             flexAlign='center'
-            flexSize='150px'
+            flexSize='160px'
             style={{
               fontSize: '18px',
               backgroundColor: 'rgba(255, 255, 255, 0.5)',
               color: '#6F5C51',
               width: `${widthSize}px`,
+              padding: '10px 0',
             }}
           >
             <span>2023년 12월 16일 토요일 PM 3:50</span>
             <span>건대 스타시티아트홀</span>
             <br />
-            신랑 장한별 / 신부 류한나
+            <Flex>
+              <Flex rowDirection flexAlign='center'>
+                장지필 <span style={{ margin: '3px' }}>·</span>김명옥<span style={{ fontSize: '11px', margin: '10px' }}>의 장남</span> 한별
+              </Flex>
+              <Flex rowDirection flexAlign='center'>
+                류순열 <span style={{ margin: '3px' }}>·</span>김어자<span style={{ fontSize: '11px', margin: '10px' }}>의 장녀</span> 한나
+              </Flex>
+
+            </Flex>
           </Flex>
         </Flex>
       </Flex>
@@ -159,17 +168,6 @@ function App() {
 
         <Flex flexSize='200px' flexAlign='center' style={{ width: `${widthSize}px` }}>
           <Title title='초대 합니다' imageUrl={mailIcon} alt='mailIcon' />
-
-          {/* <Flex */}
-          {/*  flexSize='30px' */}
-          {/*  flexAlign='left-center' */}
-          {/*  flexGap='6px' */}
-          {/*  rowDirection */}
-          {/*  style={{ fontFamily: 'Se-hwa', fontSize: '22px', lineHeight: '22px', color: '#6F5C51' }} */}
-          {/* > */}
-          {/*  <img style={{ width: '20px' }} src={mailIcon} alt='mainicon' /> */}
-          {/*  초대 합니다 */}
-          {/* </Flex> */}
           <Flex
             flexAlign='center'
             style={{
