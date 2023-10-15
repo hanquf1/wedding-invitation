@@ -22,7 +22,11 @@ function PhotoItem({ src, ...rest }: any) {
 export function PhotoSlick() {
   return (
     <Flex>
-      <Carousel>
+      <Carousel
+        infiniteLoop
+        PreventMovementUntilSwipeScrollTolerance
+        swipeScrollTolerance={50}
+      >
         {
           imageList.map((_, index) => (
             <PhotoItem src={imageList[index]} />
