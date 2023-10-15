@@ -1,11 +1,9 @@
 import { Flex } from '@mint-ui/core';
-import { MintMap, Position, MapMarkerWrapper, Offset, MintMapController } from '@mint-ui/map';
+import { MintMap, Position, MapMarkerWrapper, Offset } from '@mint-ui/map';
 import copy from 'copy-to-clipboard';
-import styled from 'styled-components';
 
 import copyIcon from '../assets/icons/copyIcon.png';
 import mapFIndIcon from '../assets/icons/mapFIndIcon.svg';
-import map from '../assets/map.png';
 
 const Marker = () => (
   <svg width='25' height='45' viewBox='0 0 32 45' fill='none' xmlns='http://www.w3.org/2000/svg'>

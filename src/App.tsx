@@ -1,17 +1,13 @@
 import './App.css';
 
 import { Flex } from '@mint-ui/core';
-import copy from 'copy-to-clipboard';
 import styled from 'styled-components';
 
-import copyIcon from './assets/icons/copyIcon.png';
 import heartIcon from './assets/icons/heartIcon.svg';
 import mailIcon from './assets/icons/mailIcon.svg';
-import mapFIndIcon from './assets/icons/mapFIndIcon.svg';
 import mapIcon from './assets/icons/mapIcon.svg';
 import photoIcon from './assets/icons/photoIcon.svg';
 import mainPhoto from './assets/main.jpeg';
-import map from './assets/map.png';
 import plant1 from './assets/plant1.png';
 import plant2 from './assets/plant2.png';
 import plant3 from './assets/plant3.png';
@@ -102,11 +98,6 @@ const SecondMainPhotoStyle = styled(Flex)`
 //   bottom: 0;
 //   right: 3px;
 // `;
-
-const handleCopy = (value: string) => {
-  console.log('string', value);
-  copy(value);
-};
 
 function App() {
   return (
