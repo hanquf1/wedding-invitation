@@ -21,6 +21,7 @@ import secondMain from './assets/secondMain.jpeg';
 // import { Board } from './components/Board';
 // import { PhotoCarousel } from './components/PhotoCarousel';
 import { Account } from './components/Account';
+import { Location } from './components/Location';
 import { PhotoSlick } from './components/PhotoSlick';
 import { Title } from './components/Title';
 // import photo5 from './assets/photo5.jpeg';
@@ -205,82 +206,7 @@ function App() {
       {/* 위치 정보, 지도 */}
       <Flex flexGap='20px' flexAlign='center' style={{ width: `${widthSize}px` }}>
         <Title title='지도' imageUrl={mapIcon} alt='mapIcon' />
-
-        <Flex flexSize='350px' style={{ backgroundColor: '#fff' }} flexAlign='center'>
-          <img style={{ width: '100%' }} src={map} alt='지도' />
-
-          <Flex flexSize='150px' flexAlign='left-center' style={{ paddingLeft: '5px', fontSize: '10px' }}>
-            <p>주 소 | 서울 광진구 능동로 110, 스타시티영존 5층 (화양동 4-20)</p>
-            <br />
-            <p>주 차 | 건물 내 B1~B5 2시간 무료, 건대병원 주차장 1시간 30분 무료</p>
-            <br />
-            <p>지하철 | 건대입구역 2호선 2번출구 7호선 3번출구</p>
-            <br />
-            <p>버 스 | 240 721 2016 2222 3217 3220 4212 102 3500</p>
-          </Flex>
-
-        </Flex>
-
-        <Flex flexSize='28px' rowDirection flexAlign='center' flexGap='10px'>
-          <Flex
-            onClick={() => handleCopy('서울 광진구 능동로 110')}
-            flexAlign='left-center'
-            flexGap='6px'
-            rowDirection
-            style={{
-              fontFamily: 'Se-hwa',
-              fontSize: '17px',
-              color: 'black',
-              backgroundColor: 'rgba(255, 255, 255, 0.5)',
-            }}
-          >
-            <img style={{ width: '20px' }} src={copyIcon} alt='mainicon' />
-            주소 복사하기
-          </Flex>
-          <Flex
-            flexAlign='left-center'
-            flexGap='6px'
-            rowDirection
-            style={{ fontSize: '11px', color: 'black', backgroundColor: 'rgba(255, 255, 255, 0.5)' }}
-            onClick={() => (window.open('https://naver.me/5girhnXo'))}
-          >
-            <img style={{ width: '20px' }} src={mapFIndIcon} alt='mainicon' />
-            <span style={{ fontFamily: 'Se-hwa', fontSize: '17px' }}>
-              <span style={{
-                fontFamily: 'Se-hwa',
-                fontSize: '17px',
-                textShadow: ' 0px 1px 5px rgba(166, 194, 133, 1)',
-              }}
-              >네이버
-              </span> 길찾기
-            </span>
-          </Flex>
-          <Flex
-            flexAlign='left-center'
-            flexGap='6px'
-            rowDirection
-            style={{ fontSize: '11px', color: 'black', backgroundColor: 'rgba(255, 255, 255, 0.5)' }}
-            onClick={() => (window.open('http://kko.to/IBa3lj4oz7'))}
-          >
-            <img style={{ width: '20px' }} src={mapFIndIcon} alt='mainicon' />
-            <span style={{ fontFamily: 'Se-hwa', fontSize: '17px' }}>
-              <span style={{
-                fontFamily: 'Se-hwa',
-                fontSize: '17px',
-                textShadow: ' 0px 1px 5px rgba(255, 227, 0, 1)',
-              }}
-              >카카오
-              </span> 길찾기
-            </span>
-
-          </Flex>
-          {/* <span style={{ backgroundColor: 'green', borderRadius: '20px', padding: '10px' }} onClick={() => (window.open('https://naver.me/5girhnXo'))}> */}
-          {/*  네이버 길찾기 */}
-          {/* </span> */}
-          {/* <span style={{ backgroundColor: 'yellow', borderRadius: '20px', padding: '10px' }} onClick={() => (window.open('http://kko.to/IBa3lj4oz7'))}> */}
-          {/*  카카오 길찾기 */}
-          {/* </span> */}
-        </Flex>
+        <Location />
       </Flex>
 
       {/* 사진 캐러셀 */}
@@ -299,39 +225,7 @@ function App() {
         <span style={{ fontSize: '10px' }}> designed by hanna & created by hanbyul </span>
       </Flex>
 
-      {/* 방명록 */}
-      {/* <Flex> */}
-      {/*  <Board /> */}
-      {/* </Flex> */}
-
-      {/* <Flex flexAlign='center'> */}
-      {/*  --------------*/}
-      {/* </Flex> */}
     </AppStyle>
-    // <>
-    //   축 결혼
-    //
-    //   {/* <div> */}
-    //   {/*  <a href='https://vitejs.dev' target='_blank' rel='noreferrer'> */}
-    //   {/*    <img src={viteLogo} className='logo' alt='Vite logo' /> */}
-    //   {/*  </a> */}
-    //   {/*  <a href='https://react.dev' target='_blank' rel='noreferrer'> */}
-    //   {/*    <img src={reactLogo} className='logo react' alt='React logo' /> */}
-    //   {/*  </a> */}
-    //   {/* </div> */}
-    //   {/* <h1>Vite + React</h1> */}
-    //   {/* <div className='card'> */}
-    //   {/*  <button onClick={() => setCount((count) => count + 1)}> */}
-    //   {/*    count is {count} */}
-    //   {/*  </button> */}
-    //   {/*  <p> */}
-    //   {/*    Edit <code>src/App.tsx</code> and save to test HMR */}
-    //   {/*  </p> */}
-    //   {/* </div> */}
-    //   {/* <p className='read-the-docs'> */}
-    //   {/*  Click on the Vite and React logos to learn more */}
-    //   {/* </p> */}
-    // </>
   );
 }
 

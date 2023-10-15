@@ -11,8 +11,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@mint-ui/core": "0.10.3",
-    "@mint-ui/map": "^0.6.0-beta",
+    "@mint-ui/core": "0.10.5",
+    "@mint-ui/map": "0.8.0-beta",
     "axios": "^1.5.1",
     "eslint-config-rsquare": "^1.0.0",
     "google-auth-library": "^9.1.0",
