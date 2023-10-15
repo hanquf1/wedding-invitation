@@ -24,7 +24,6 @@ export function PhotoSlick() {
     <Flex>
       <Carousel
         infiniteLoop
-        PreventMovementUntilSwipeScrollTolerance
         swipeScrollTolerance={50}
         showStatus
       >
