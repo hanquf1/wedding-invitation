@@ -26,10 +26,6 @@ export function Location() {
 
   const center = new Position(37.5407309, 127.0714632);
 
-  console.log('import.meta.env.VITE_GOOGLE_KEY', import.meta.env.VITE_GOOGLE_KEY);
-  // console.log('import.meta.env.VITE_NAVER_KEY', import.meta.env.VITE_NAVER_KEY);
-  console.log('TEST', import.meta.env.TEST);
-  console.log('Environment.VITE_NAVER_KEY', Environment.VITE_NAVER_KEY);
   return (
     <Flex flexGap='20px'>
 
@@ -38,13 +34,14 @@ export function Location() {
         <div style={{ height: '200px', width: '300px' }}>
 
           <MintMap
-            draggable
+            draggable={false}
+            mapId='id'
             mapType='naver'
-            mapKey={import.meta.env.VITE_NAVER_KEY}
+            mapKey={import.meta.env.VITE_NAVER_KEY || ''}
             // onLoad={(map, controller) => setControllerState(controller)}
             // center={new Position(127.0714632, 37.5407309)}
-            // base={{ center, zoomLevel: 16, minZoomLevel: 1 }}
-            base={{ center, zoomLevel: 16 }}
+            base={{ center, zoomLevel: 16, minZoomLevel: 1 }}
+            // base={{ center }}
           >
             <MapMarkerWrapper
               anchor={new Offset(12, 43)}
