@@ -40,7 +40,7 @@ export function Location() {
           <MintMap
             draggable
             mapType='naver'
-            mapKey={Environment.VITE_NAVER_KEY}
+            mapKey={import.meta.env.VITE_NAVER_KEY}
             // onLoad={(map, controller) => setControllerState(controller)}
             // center={new Position(127.0714632, 37.5407309)}
             // base={{ center, zoomLevel: 16, minZoomLevel: 1 }}
