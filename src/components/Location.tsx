@@ -2,6 +2,7 @@ import { Flex } from '@mint-ui/core';
 import { MintMap, Position, MapMarkerWrapper, Offset } from '@mint-ui/map';
 import copy from 'copy-to-clipboard';
 
+import { Environment } from '../../env';
 import copyIcon from '../assets/icons/copyIcon.png';
 import mapFIndIcon from '../assets/icons/mapFIndIcon.svg';
 
@@ -25,7 +26,8 @@ export function Location() {
 
   const center = new Position(37.5407309, 127.0714632);
 
-  console.log('import.meta.env.VITE_NAVER_KEY', import.meta.env.VITE_NAVER_KEY);
+  // console.log('import.meta.env.VITE_NAVER_KEY', import.meta.env.VITE_NAVER_KEY);
+  console.log('Environment.VITE_NAVER_KEY', Environment.VITE_NAVER_KEY);
   return (
     <Flex flexGap='20px'>
 
@@ -36,7 +38,7 @@ export function Location() {
           <MintMap
             draggable
             mapType='naver'
-            mapKey={import.meta.env.VITE_NAVER_KEY || ''}
+            mapKey={Environment.VITE_NAVER_KEY}
             // onLoad={(map, controller) => setControllerState(controller)}
             // center={new Position(127.0714632, 37.5407309)}
             // base={{ center, zoomLevel: 16, minZoomLevel: 1 }}
