@@ -25,6 +25,7 @@ export function Location() {
 
   const center = new Position(37.5407309, 127.0714632);
 
+  console.log('import.meta.env.VITE_NAVER_KEY', import.meta.env.VITE_NAVER_KEY);
   return (
     <Flex flexGap='20px'>
 
