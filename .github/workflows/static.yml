@@ -45,7 +45,6 @@ jobs:
         with:
           VITE_NAVER_KEY: ${{ secrets.VITE_NAVER_KEY }}
         run: echo "VITE_NAVER_KEY=$VITE_NAVER_KEY" >> .env
-        uses: getsentry/action-release@v1
 
       - name: Setup Pages
         uses: actions/configure-pages@v3
