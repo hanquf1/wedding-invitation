@@ -2,7 +2,6 @@ import { Flex } from '@mint-ui/core';
 import { MintMap, Position, MapMarkerWrapper, Offset } from '@mint-ui/map';
 import copy from 'copy-to-clipboard';
 
-import { Environment } from '../../env';
 import copyIcon from '../assets/icons/copyIcon.png';
 import mapFIndIcon from '../assets/icons/mapFIndIcon.svg';
 
