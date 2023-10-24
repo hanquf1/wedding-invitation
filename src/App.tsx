@@ -143,10 +143,10 @@ function App() {
             <span>건대 스타시티아트홀</span>
             <br />
             <Flex>
-              <Flex rowDirection flexAlign='center'>
+              <Flex rowDirection flexAlign='center' style={{ overflow: 'hidden' }}>
                 장지필 <span style={{ margin: '3px' }}>·</span>김명옥<span style={{ fontSize: '11px', margin: '10px' }}>의 장남</span> 한별
               </Flex>
-              <Flex rowDirection flexAlign='center'>
+              <Flex rowDirection flexAlign='center' style={{ overflow: 'hidden' }}>
                 류순열 <span style={{ margin: '3px' }}>·</span>김어자<span style={{ fontSize: '11px', margin: '10px' }}>의 장녀</span> 한나
               </Flex>
 
@@ -168,6 +168,7 @@ function App() {
               backgroundColor: 'rgba(255, 255, 255, 0.5)',
               color: '#6F5C51',
               padding: '10px 0',
+              overflow: 'hidden',
             }}
           >
             앞으로 함께 걸어갈 ‘한별&한나’의 여정, <br />
