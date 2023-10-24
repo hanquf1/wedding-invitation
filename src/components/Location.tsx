@@ -75,6 +75,7 @@ export function Location() {
             fontSize: '17px',
             color: 'black',
             backgroundColor: 'rgba(255, 255, 255, 0.5)',
+            overflow: 'hidden',
           }}
         >
           <img style={{ width: '20px' }} src={copyIcon} alt='mainicon' />
@@ -84,7 +85,7 @@ export function Location() {
           flexAlign='left-center'
           flexGap='6px'
           rowDirection
-          style={{ fontSize: '11px', color: 'black', backgroundColor: 'rgba(255, 255, 255, 0.5)' }}
+          style={{ fontSize: '11px', color: 'black', backgroundColor: 'rgba(255, 255, 255, 0.5)', overflow: 'hidden' }}
           onClick={() => (window.open('https://naver.me/5girhnXo'))}
         >
           <img style={{ width: '20px' }} src={mapFIndIcon} alt='mainicon' />
@@ -102,7 +103,7 @@ export function Location() {
           flexAlign='left-center'
           flexGap='6px'
           rowDirection
-          style={{ fontSize: '11px', color: 'black', backgroundColor: 'rgba(255, 255, 255, 0.5)' }}
+          style={{ fontSize: '11px', color: 'black', backgroundColor: 'rgba(255, 255, 255, 0.5)', overflow: 'hidden' }}
           onClick={() => (window.open('http://kko.to/IBa3lj4oz7'))}
         >
           <img style={{ width: '20px' }} src={mapFIndIcon} alt='mainicon' />
